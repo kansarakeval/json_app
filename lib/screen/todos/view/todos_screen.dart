@@ -34,7 +34,6 @@ class _TodosScreenState extends State<TodosScreen> {
             return ListTile(
               leading: Text("${providerw!.todosl2[index].id}",style: TextStyle(fontWeight: FontWeight.bold),),
               title: Text("${providerw!.todosl2[index].title}",style: TextStyle(fontWeight: FontWeight.bold),),
-              subtitle: Text("${providerw!.todosl2[index].completed}"),
             );
           },
         ),
