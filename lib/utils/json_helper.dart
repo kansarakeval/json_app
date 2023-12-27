@@ -1,11 +1,12 @@
 import 'dart:convert';
-
 import 'package:flutter/services.dart';
 import 'package:json_app/screen/albums/model/albums_model.dart';
 import 'package:json_app/screen/comments/model/comments_model.dart';
+import 'package:json_app/screen/conuntry/model/cuntry_model.dart';
 import 'package:json_app/screen/photos/model/photos_model.dart';
 import 'package:json_app/screen/posts/model/posts_model.dart';
 import 'package:json_app/screen/todos/model/todos_model.dart';
+import 'package:json_app/screen/user/model/user_model.dart';
 
 class JsonHelper {
   //photos jsonHelper
@@ -15,9 +16,10 @@ class JsonHelper {
     //String -> json
     List photo = jsonDecode(photosString);
 
-   List<PhotosModel> photosModelList = photo.map((e) => PhotosModel.mapToModel(e)).toList();
+    List<PhotosModel> photosModelList =
+        photo.map((e) => PhotosModel.mapToModel(e)).toList();
 
-   return photosModelList;
+    return photosModelList;
   }
 
   //posts jsonHelper
@@ -27,7 +29,8 @@ class JsonHelper {
     //String -> json
     List posts = jsonDecode(postsString);
 
-    List<PostsModel> postsModelList = posts.map((e) => PostsModel.mapToModel(e)).toList();
+    List<PostsModel> postsModelList =
+        posts.map((e) => PostsModel.mapToModel(e)).toList();
 
     return postsModelList;
   }
@@ -35,11 +38,13 @@ class JsonHelper {
   //comments jsonHelper
   Future<List<CommentsModel>> commentsToList() async {
     //assets -> Variable
-    var commentsString = await rootBundle.loadString("assets/json/comments.json");
+    var commentsString =
+        await rootBundle.loadString("assets/json/comments.json");
     //String -> json
     List comments = jsonDecode(commentsString);
 
-    List<CommentsModel> commentsModelList = comments.map((e) => CommentsModel.mapToModel(e)).toList();
+    List<CommentsModel> commentsModelList =
+        comments.map((e) => CommentsModel.mapToModel(e)).toList();
 
     return commentsModelList;
   }
@@ -51,7 +56,8 @@ class JsonHelper {
     //String -> json
     List albums = jsonDecode(albumsString);
 
-    List<AlbumsModel> albumsModelList = albums.map((e) => AlbumsModel.mapToModel(e)).toList();
+    List<AlbumsModel> albumsModelList =
+        albums.map((e) => AlbumsModel.mapToModel(e)).toList();
 
     return albumsModelList;
   }
@@ -63,9 +69,29 @@ class JsonHelper {
     //String -> json
     List todos = jsonDecode(todosString);
 
-    List<TodoModel> todosModelList = todos.map((e) => TodoModel.mapToModel(e)).toList();
+    List<TodoModel> todosModelList =
+        todos.map((e) => TodoModel.mapToModel(e)).toList();
 
     return todosModelList;
   }
 
+  //user jsonHelper
+  Future<List<UserModel>> userToList() async {
+    var userString = await rootBundle.loadString("assets/json/user.json");
+    List user = jsonDecode(userString);
+
+    List<UserModel> userModelList= user.map((e) => UserModel.mapToModel(e)).toList();
+
+    return userModelList;
+  }
+
+  //user conuntryHelper
+  Future<List<CuntryModel>> contryToList() async {
+    var cuntryString = await rootBundle.loadString("assets/json/country.json");
+    List user = jsonDecode(cuntryString);
+
+    List<CuntryModel> userModelList= user.map((e) => CuntryModel.mapToModel(e)).toList();
+
+    return userModelList;
+  }
 }
