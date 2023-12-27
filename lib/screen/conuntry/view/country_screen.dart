@@ -35,8 +35,8 @@ class _CountryScreenState extends State<CountryScreen> {
               title: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text("${providerw!.counteryl2[index].cuntryNameModel!.cuntryNativeName!.cuntryEng!.official}"),
-                  Text("${providerw!.counteryl2[index].cuntryNameModel!.cuntryNativeName!.cuntryEng!.common}"),
+                  Text("${providerw!.counteryl2[index].cuntryNameModel!.official}"),
+                  Text("${providerw!.counteryl2[index].cuntryNameModel!.common}"),
                 ],
               ),
             );

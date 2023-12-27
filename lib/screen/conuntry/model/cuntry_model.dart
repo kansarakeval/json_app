@@ -20,7 +20,7 @@ class CuntryNameModel{
     return CuntryNameModel(
         common: m1['common'],
         official: m1['official'],
-      cuntryNativeName: CuntryNativeNameModel.mapToModel(m1['nativeName'])
+      // cuntryNativeName: CuntryNativeNameModel.mapToModel(m1['nativeName'])
     );
   }
 }
@@ -32,7 +32,7 @@ class CuntryNativeNameModel{
 
   factory CuntryNativeNameModel.mapToModel(Map m1) {
     return CuntryNativeNameModel(
-      cuntryEng: CuntryEngModel.mapToModel(m1['eng'])
+      // cuntryEng: CuntryEngModel.mapToModel(m1['eng'])
     );
   }
 
