@@ -16,7 +16,7 @@ class _UseresScreenState extends State<UseresScreen> {
   @override
   void initState() {
     super.initState();
-    context.read<UseresProvider>().useresgetData();
+    context.read<UseresProvider>().getData();
   }
 
   @override
@@ -26,32 +26,27 @@ class _UseresScreenState extends State<UseresScreen> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: Text("User"),
+          title: Text("Useres"),
           centerTitle: true,
         ),
-        body: providerw!.useresModel == null
+        body: providerw!.useresl2 == null
             ? Center(child: CircularProgressIndicator())
             : ListView.builder(
-                itemCount: providerw!.useresModel!.dataModelList!.length,
+                itemCount: providerw!.useresl2!.dataModelList!.length,
                 itemBuilder: (context, index) {
                   return ListTile(
                     leading: Text(
-                        "${providerw!.useresModel!.dataModelList![index].id}"),
+                        "${providerw!.useresl2!.dataModelList![index].id}"),
                     title: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                            "${providerw!.useresModel!.dataModelList![index].email}"),
+                            "${providerw!.useresl2!.dataModelList![index].email}"),
                         Text(
-                            "${providerw!.useresModel!.dataModelList![index].first_name}"),
+                            "${providerw!.useresl2!.dataModelList![index].first_name}"),
                         Text(
-                            "${providerw!.useresModel!.dataModelList![index].last_name}"),
+                            "${providerw!.useresl2!.dataModelList![index].last_name}"),
                       ],
-                    ),
-                    subtitle: Image.network(
-                      "${providerw!.useresModel!.supportModel!.url}",
-                      height: 100,
-                      width: 100,
                     ),
                   );
                 },

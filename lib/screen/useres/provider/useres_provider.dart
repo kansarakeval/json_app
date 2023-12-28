@@ -4,13 +4,13 @@ import 'package:json_app/utils/json_helper.dart';
 
 class UseresProvider with ChangeNotifier{
 
-  UseresModel? useresModel =UseresModel();
+  UseresModel? useresl2;
 
-  Future<void> useresgetData()
+  Future<void> getData()
   async {
     JsonHelper jsonHelper=JsonHelper();
-    UseresModel useresl1 = await jsonHelper.UserJsonModel();
-    useresModel=useresl1;
+    UseresModel useresl1 = await jsonHelper.UseresJsonModel();
+    useresl2=useresl1;
     notifyListeners();
   }
 }

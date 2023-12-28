@@ -97,7 +97,7 @@ class JsonHelper {
   }
 
   //userModel jsonHelper
-  Future<UseresModel> UserJsonModel()
+  Future<UseresModel> UseresJsonModel()
   async {
     var useresString = await rootBundle.loadString("assets/json/useres.json");
     var useres = jsonDecode(useresString);
