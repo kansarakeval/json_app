@@ -68,6 +68,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 },
                 child: Text("Country"),
               ),
+              SizedBox(height: 10,),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, 'useres');
+                },
+                child: Text("Useres"),
+              ),
             ],
           ),
         ),

@@ -7,6 +7,7 @@ import 'package:json_app/screen/photos/model/photos_model.dart';
 import 'package:json_app/screen/posts/model/posts_model.dart';
 import 'package:json_app/screen/todos/model/todos_model.dart';
 import 'package:json_app/screen/user/model/user_model.dart';
+import 'package:json_app/screen/useres/model/useres_model.dart';
 
 class JsonHelper {
   //photos jsonHelper
@@ -93,5 +94,14 @@ class JsonHelper {
     List<CuntryModel> userModelList= user.map((e) => CuntryModel.mapToModel(e)).toList();
 
     return userModelList;
+  }
+
+  //userModel jsonHelper
+  Future<UseresModel> UserJsonModel()
+  async {
+    var useresString = await rootBundle.loadString("assets/json/useres.json");
+    var useres = jsonDecode(useresString);
+    UseresModel useresModel= UseresModel.mapToModel(useres);
+    return UseresModel();
   }
 }
