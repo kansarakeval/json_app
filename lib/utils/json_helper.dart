@@ -102,6 +102,6 @@ class JsonHelper {
     var useresString = await rootBundle.loadString("assets/json/useres.json");
     var useres = jsonDecode(useresString);
     UseresModel useresModel= UseresModel.mapToModel(useres);
-    return UseresModel();
+    return useresModel;
   }
 }
